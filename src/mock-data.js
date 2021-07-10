@@ -1,0 +1,403 @@
+let mock = [{
+
+	"make":"Mercury",
+	"model":"Villager",
+	"year":1995,
+	"price":1000,
+	"image":'car-pic-1',
+	"vin":"WAUJT54B22N908165"
+},
+{
+	"make":"Ford",
+	"model":"Escort",
+	"year":1999,
+	"price":3000,
+	"image":'car-pic-2',
+	"vin":"WAULC68EX3A806625"
+},
+{
+	"make":"Dodge",
+	"model":"Spirit",
+	"year":1995,
+	"price":800,
+	"image":'car-pic-3',
+	"vin":"JN1AZ4EH7FM939361"
+},
+{
+	"make":"Dodge",
+	"model":"Ram Van 3500",
+	"year":2002,
+	"price":3000,
+	"image":'car-pic-4',
+	"vin":"JH4CL96875C011703"
+},
+{
+	"make":"Hyundai",
+	"model":"Tiburon",
+	"year":2005,
+	"price":4000,
+	"image":'car-pic-5',
+	"vin":"WVGEP9BP3FD749517"
+},
+{
+	"make":"Volkswagen",
+	"model":"Golf",
+	"year":2006,
+	"price":5000,
+	"image":'car-pic-6',
+	"vin":"WAUVT68E55A624956"
+},
+{
+	"make":"MINI",
+	"model":"Cooper Clubman",
+	"year":2009,
+	"price":3200,
+	"image":'car-pic-7',
+	"vin":"2B3CK5CT1AH239145"
+},
+{
+	"make":"Cadillac",
+	"model":"Seville",
+	"year":1999,
+	"price":2600,
+	"image":'car-pic-8',
+	"vin":"WBAWC33559P629359"
+},
+{
+	"make":"Chevrolet",
+	"model":"Equinox",
+	"year":2005,
+	"price":4000,
+	"image":'car-pic-9',
+	"vin":"JN8AZ2KR4AT000427"
+},
+{
+	"make":"Pontiac",
+	"model":"Fiero",
+	"year":1987,
+	"price":3700,
+	"image":'car-pic-10',
+	"vin":"JTHBW1GG7E2356391"
+},
+{
+	"make":"Nissan",
+	"model":"Maxima",
+	"year":1999,
+	"price":2200,
+	"image":'car-pic-11',
+	"vin":"1FTFW1E8XAK293597"
+},
+{
+	"make":"Ford",
+	"model":"Mustang",
+	"year":2003,
+	"price":17000,
+	"image":'car-pic-12',
+	"vin":"JTHFE2C21C2954297"
+},
+{
+	"make":"Dodge",
+	"model":"Viper",
+	"year":2000,
+	"price":47000,
+	"image":'car-pic-13',
+	"vin":"1VWAH7A32CC377086"
+},
+{
+	"make":"Mazda",
+	"model":"RX-8",
+	"year":2011,
+	"price":10000,
+	"image":'car-pic-14',
+	"vin":"1N6AF0LY4FN255117"
+},
+{
+	"make":"Audi",
+	"model":"A4",
+	"year":2012,
+	"price":8700,
+	"image":'car-pic-15',
+	"vin":"1GT01XEGXFZ962404"
+},
+{
+	"make":"GMC",
+	"model":"Canyon",
+	"year":2011,
+	"price":14000,
+	"image":'car-pic-16',
+	"vin":"3MZBM1K74EM865679"
+},
+{
+	"make":"Ford",
+	"model":"E-350 Super Duty Van",
+	"year":2006,
+	"price":8000,
+	"image":'car-pic-17',
+	"vin":"1N6AD0CU9DN649387"
+},
+{
+	"make":"Ford",
+	"model":"Focus",
+	"year":2001,
+	"price":2100,
+	"image":'car-pic-18',
+	"vin":"WAUJC68E74A359244"
+},
+{
+	"make":"Toyota",
+	"model":"Solara",
+	"year":2006,
+	"price":4900,
+	"image":'car-pic-19',
+	"vin":"WAUCVAFR1BA111869"
+},
+{
+	"make":"Jaguar",
+	"model":"X-Type",
+	"year":2008,
+	"price":4600,
+	"image":'car-pic-20',
+	"vin":"3C6JD7EPXCG698616"
+},
+{
+	"make":"Pontiac",
+	"model":"Vibe",
+	"year":2009,
+	"price":2700,
+	"image":'car-pic-21',
+	"vin":"1GYS4HKJ7FR195076"
+},
+{
+	"make":"Mitsubishi",
+	"model":"Expo",
+	"year":1993,
+	"price":550,
+	"image":'car-pic-22',
+	"vin":"1G6KD57Y29U192262"
+},
+{
+	"make":"Honda",
+	"model":"Crosstour",
+	"year":2012,
+	"price":11000,
+	"image":'car-pic-23',
+	"vin":"WAUAFAFH9CN216309"
+},
+{
+	"make":"Morgan",
+	"model":"Aero 8",
+	"year":2008,
+	"price":140000,
+	"image":'car-pic-24',
+	"vin":"JTDKTUD37ED464592"
+},
+{
+	"make":"Acura",
+	"model":"Integra",
+	"year":1998,
+	"price":2500,
+	"image":'car-pic-25',
+	"vin":"3N1AB6AP1CL068928"
+},
+{
+	"make":"Buick",
+	"model":"Roadmaster",
+	"year":1993,
+	"price":2000,
+	"image":'car-pic-26',
+	"vin":"1N6AA0CC6DN928831"
+},
+{
+	"make":"Maserati",
+	"model":"Coupe",
+	"year":2006,
+	"price":31000,
+	"image":'car-pic-27',
+	"vin":"1LNHL9DK4EG886327"
+},
+{
+	"make":"Cadillac",
+	"model":"XLR-V",
+	"year":2008,
+	"price":24000,
+	"image":'car-pic-28',
+	"vin":"JN8AZ2KR3BT740875"
+},
+{
+	"make":"Chevrolet",
+	"model":"S10",
+	"year":1996,
+	"price":2400,
+	"image":'car-pic-29',
+	"vin":"WBA3R5C58EF185844"
+},
+{
+	"make":"Chevrolet",
+	"model":"Suburban 2500",
+	"year":2005,
+	"price":7500,
+	"image":'car-pic-30',
+	"vin":"5J8TB3H5XGL522430"
+},
+{
+	"make":"Pontiac",
+	"model":"LeMans",
+	"year":1968,
+	"price":30000,
+	"image":'car-pic-31',
+	"vin":"1G6DH8E53D0358795"
+},
+{
+	"make":"Chevrolet",
+	"model":"Tahoe",
+	"year":2011,
+	"price":3500,
+	"image":'car-pic-32',
+	"vin":"2G61S5S31E9397527"
+},
+{
+	"make":"GMC",
+	"model":"Yukon XL 1500",
+	"year":2001,
+	"price":8000,
+	"image":'car-pic-33',
+	"vin":"2GKALMEKXC6066679"
+},
+{
+	"make":"Toyota",
+	"model":"T100",
+	"year":1997,
+	"price":3700,
+	"image":'car-pic-34',
+	"vin":"3D7JB1EP9BG759390"
+},
+{
+	"make":"Porsche",
+	"model":"968",
+	"year":1993,
+	"price":22000,
+	"image":'car-pic-35',
+	"vin":"KMHHT6KJ0FU670275"
+},
+{
+	"make":"Dodge",
+	"model":"Caravan",
+	"year":2011,
+	"price":7400,
+	"image":'car-pic-36',
+	"vin":"JH4CU2F8XDC357456"
+},
+{
+	"make":"Lamborghini",
+	"model":"Countach",
+	"year":1985,
+	"price":400000,
+	"image":'car-pic-37',
+	"vin":"WBAYF8C50ED642254"
+},
+{
+	"make":"Mazda",
+	"model":"Millenia",
+	"year":2002,
+	"price":3400,
+	"image":'car-pic-38',
+	"vin":"WBAKG7C50BE227258"
+},
+{
+	"make":"BMW",
+	"model":"5 Series",
+	"year":2001,
+	"price":3200,
+	"image":'car-pic-39',
+	"vin":"SCFBB04B37G097342"
+},
+{
+	"make":"Mitsubishi",
+	"model":"Montero Sport",
+	"year":2000,
+	"price":2900,
+	"image":'car-pic-40',
+	"vin":"3FAHP0DC3AR650290"
+},
+{
+	"make":"Toyota",
+	"model":"Camry",
+	"year":1997,
+	"price":2700,
+	"image":'car-pic-41',
+	"vin":"1GYS4FEJ9BR750037"
+},
+{
+	"make":"Chevrolet",
+	"model":"Corvette Stingray",
+	"year":1968,
+	"price":40000,
+	"image":'car-pic-42',
+	"vin":"3N1AB7AP4FY764941"
+},
+{
+	"make":"Chevrolet",
+	"model":"Venture",
+	"year":2005,
+	"price":2600,
+	"image":'car-pic-43',
+	"vin":"5N1AN0NW1FN420859"
+},
+{
+	"make":"Suzuki",
+	"model":"Swift",
+	"year":1987,
+	"price":3200,
+	"image":'car-pic-44',
+	"vin":"NM0KS6AN8AT297189"
+},
+{
+	"make":"Suzuki",
+	"model":"Forenza",
+	"year":2004,
+	"price":1900,
+	"image":'car-pic-45',
+	"vin":"SCFEBBCFXCG097992"
+},
+{
+	"make":"Eagle",
+	"model":"Vision",
+	"year":1996,
+	"price":2300,
+	"image":'car-pic-46',
+	"vin":"1N6AD0CU8DN047290"
+},
+{
+	"make":"GMC",
+	"model":"Jimmy",
+	"year":1992,
+	"price":2500,
+	"image":'car-pic-47',
+	"vin":"1N4AL3AP2DC981418"
+},
+{
+	"make":"BMW",
+	"model":"8 Series",
+	"year":1992,
+	"price":25000,
+	"image":'car-pic-48',
+	"vin":"WVWED7AJ0CW956123"
+},
+{
+	"make":"Ford",
+	"model":"E-Series",
+	"year":1985,
+	"price":10000,
+	"image":'car-pic-49',
+	"vin":"JTDKDTB38D1063403"
+},
+{
+	"make":"Porsche",
+	"model":"Boxster",
+	"year":2009,
+	"price":24000,
+	"image":'car-pic-50',
+	"vin":"3VW4A7AT0DM520313"
+}]
+
+export default mock;
