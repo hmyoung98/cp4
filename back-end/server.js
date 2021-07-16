@@ -14,10 +14,10 @@ mongoose.connect('mongodb://localhost:27017/cars', {
   useNewUrlParser: true
 });
 
-// configure multer so it uploads to '../front-end/public/images'
+// configure multer so it uploads to '../front-end/public/images/car-pics'
 const multer = require('multer')
 const upload = multer({
-  dest: '../front-end/public/images',
+  dest: '../front-end/public/images/car-pics',
   limits: {
     fileSize: 10000000
   }
@@ -29,6 +29,7 @@ const itemSchema = new mongoose.Schema({
   model: String,
   year: {type: Number, min: 1960, max: 3000 },
   price: {type: Number, min: 200, max: 1000000 },
+  path: String
 });
 
 // model for cars on the home screen
@@ -40,7 +41,7 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
     return res.sendStatus(400);
   }
   res.send({
-    path: "/images/" + req.file.filename
+    path: "/images/car-pics/" + req.file.filename
   });
 });
 
@@ -51,6 +52,7 @@ app.post('/api/items', async (req, res) => {
     model: req.body.model,
     year: req.body.year,
     price: req.body.price,
+    path: req.body.path,
   });
   try {
     await item.save();

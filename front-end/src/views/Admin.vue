@@ -1,4 +1,8 @@
 <template>
+<div class="admin">
+  <div class="heading">
+    <h2>Add a Car!</h2>
+  </div>
   <div class="add">
     <div class="form">
       <input v-model="brand" placeholder="Brand">
@@ -20,6 +24,34 @@
       <img :src="addItem.path" />
     </div>
   </div>
+  <div class="heading">
+    <h2>Edit/Delete a Car!</h2>
+  </div>
+  <div class="edit">
+    <div class="form">
+      <input v-model="findTitle" placeholder="Search">
+      <div class="suggestions" v-if="suggestions.length > 0">
+        <div class="suggestion" v-for="s in suggestions" :key="s.id" @click = "selectItem(s)">{{s.brand}} {{s.model}}
+	</div>
+      </div>
+    </div>
+    <div class="upload" v-if="findItem">
+      <input v-model="findItem.brand">
+      <p></p>
+      <input v-model="findItem.model">
+      <p></p>
+      <input v-model="findItem.year">
+      <p></p>
+      <input v-model="findItem.price">
+      <p></p>
+      <img :src="findItem.path" />
+    </div>
+    <div class="actions" v-if="findItem">
+      <button @click="deleteItem(findItem)">Delete</button>
+      <button @click="editItem(findItem)">Edit</button>
+    </div>
+  </div>
+</div>
 </template>
 
 <style scoped>
@@ -42,6 +74,7 @@
 .add,
 .edit {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .circle {
@@ -100,8 +133,8 @@ export default {
   },
   computed: {
     suggestions() {
-      let items = this.items.filter(item => item.title.toLowerCase().startsWith(this.findTitle.toLowerCase()));
-      return items.sort((a, b) => a.title > b.title);
+      let items = this.items.filter(item => item.model.toLowerCase().startsWith(this.findTitle.toLowerCase()));
+      return items.sort((a, b) => a.model > b.model);
     }
   },
   created() {
@@ -114,7 +147,7 @@ export default {
     async upload() {
       try {
         const formData = new FormData();
-        formData.append('photo', this.file, this.file.brand, this.file.model, this.file.year, this.file.price)
+        formData.append('photo', this.file, this.file.name)
         let r1 = await axios.post('/api/photos', formData);
         let r2 = await axios.post('/api/items', {
           brand: this.brand,
@@ -158,6 +191,7 @@ export default {
           model: this.findItem.model,
           year: this.findItem.year,
           price: this.findItem.price,
+          path: this.findItem.path,
         });
         this.findItem = null;
         this.getItems();
